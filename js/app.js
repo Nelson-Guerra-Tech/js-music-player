@@ -1,4 +1,5 @@
 // targeting elements
+const playerContainer = document.getElementById('player-container');
 const image = document.getElementById('img');
 const title = document.getElementById('title');
 const artist = document.getElementById('artist');
@@ -34,6 +35,12 @@ const songs = [
     displayName: 'Test Pilot',
     artist: 'Space Sailors',
   },
+  {
+    img: 'https://media.giphy.com/media/ZgCM9TWQ5lL8zpc4G2/giphy.gif',
+    name: 'Universum',
+    displayName: 'Universum',
+    artist: 'Skykot',
+  },
 ];
 
 // playing or not boolean
@@ -45,6 +52,7 @@ const playSong = () => {
   // change button to pause
   playBtn.classList.replace('fa-play', 'fa-pause');
   playBtn.setAttribute('title', 'Pause');
+
   music.play();
 };
 
@@ -77,7 +85,26 @@ function prevSong() {
   if (songIndex < 0) {
     songIndex = songs.length - 1;
   }
+
   loadSong(songs[songIndex]);
+
+  // neon color
+  if (songIndex === 1) {
+    playerContainer.style.boxShadow =
+      '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #00ffc6, 0 0 0.8rem #00ffc6, 0 0 2.8rem #00ffc6, inset 0 0 1.3rem #00ffc6';
+  } else if (songIndex === 2) {
+    playerContainer.style.boxShadow =
+      '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #9900F0, 0 0 0.8rem #9900F0, 0 0 2.8rem #9900F0, inset 0 0 1.3rem #9900F0';
+  } else if (songIndex === 3) {
+    playerContainer.style.boxShadow =
+      '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #F900BF, 0 0 0.8rem #F900BF, 0 0 2.8rem #F900BF, inset 0 0 1.3rem #F900BF';
+  } else if (songIndex === 4) {
+    playerContainer.style.boxShadow =
+      '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #C4FB6D, 0 0 0.8rem #C4FB6D, 0 0 2.8rem #C4FB6D, inset 0 0 1.3rem #C4FB6D';
+  } else if (songIndex === 0) {
+    playerContainer.style.boxShadow =
+      '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #FF85B3, 0 0 0.8rem #FF85B3, 0 0 2.8rem #FF85B3, inset 0 0 1.3rem #FF85B3';
+  }
   playSong();
 }
 
@@ -87,7 +114,25 @@ function nextSong() {
   if (songIndex > songs.length - 1) {
     songIndex = 0;
   }
+
   loadSong(songs[songIndex]);
+  // neon color
+  if (songIndex === 1) {
+    playerContainer.style.boxShadow =
+      '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #00ffc6, 0 0 0.8rem #00ffc6, 0 0 2.8rem #00ffc6, inset 0 0 1.3rem #00ffc6';
+  } else if (songIndex === 2) {
+    playerContainer.style.boxShadow =
+      '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #9900F0, 0 0 0.8rem #9900F0, 0 0 2.8rem #9900F0, inset 0 0 1.3rem #9900F0';
+  } else if (songIndex === 3) {
+    playerContainer.style.boxShadow =
+      '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #F900BF, 0 0 0.8rem #F900BF, 0 0 2.8rem #F900BF, inset 0 0 1.3rem #F900BF';
+  } else if (songIndex === 4) {
+    playerContainer.style.boxShadow =
+      '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #C4FB6D, 0 0 0.8rem #C4FB6D, 0 0 2.8rem #C4FB6D, inset 0 0 1.3rem #C4FB6D';
+  } else if (songIndex === 0) {
+    playerContainer.style.boxShadow =
+      '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #FF85B3, 0 0 0.8rem #FF85B3, 0 0 2.8rem #FF85B3, inset 0 0 1.3rem #FF85B3';
+  }
   playSong();
 }
 

@@ -24,7 +24,7 @@ h3 {
 body {
   margin: 0;
   min-height: 100vh;
-  background: #13171e;
+  background: #121013;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +40,11 @@ body {
   height: 500px;
   width: 400px;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+
+  transition: all 0.3s ease-in-out;
+  border: 0.1rem solid #fff;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #ff85b3,
+    0 0 0.8rem #ff85b3, 0 0 2.8rem #ff85b3, inset 0 0 1.3rem #ff85b3;
 }
 
 .img-container {
@@ -99,10 +103,15 @@ body {
   margin-right: 30px;
   cursor: pointer;
   user-select: none;
+  transition: all 0.1s ease-in-out;
 }
 
 .fas:hover {
-  filter: brightness(50%);
+  filter: brightness(20%);
+}
+
+.fas:active {
+  transform: translateY(5px);
 }
 
 .main-button {
@@ -110,6 +119,8 @@ body {
   position: relative;
   top: 3px;
 }
+
+/** NEON */
 
 /** Media Query: iPhone (Vertical) */
 @media screen and (max-width: 376px) {
